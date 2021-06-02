@@ -76,7 +76,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="Height"
-                android:inputType="number">
+                android:inputType="numberDecimal">
 
             </EditText>
 
@@ -103,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="Weight"
-                android:inputType="number">
+                android:inputType="numberDecimal">
 
             </EditText>
 
