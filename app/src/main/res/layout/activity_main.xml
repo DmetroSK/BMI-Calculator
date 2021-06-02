@@ -41,12 +41,14 @@
             android:weightSum="8"
             android:orientation="horizontal"
             android:padding="10dp">
+
             <EditText
                 android:id="@+id/txt_age"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="Age">
+                android:hint="Age"
+                android:inputType="number">
 
             </EditText>
 
@@ -67,12 +69,14 @@
             android:weightSum="8"
             android:orientation="horizontal"
             android:padding="10dp">
+
             <EditText
                 android:id="@+id/txt_height"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="Height">
+                android:hint="Height"
+                android:inputType="number">
 
             </EditText>
 
@@ -92,12 +96,14 @@
             android:weightSum="8"
             android:orientation="horizontal"
             android:padding="10dp">
+
             <EditText
                 android:id="@+id/txt_weight"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:hint="Weight">
+                android:hint="Weight"
+                android:inputType="number">
 
             </EditText>
 
