@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 Float height_value = Float.parseFloat(height.getText().toString());
                 Float weight_value = Float.parseFloat(weight.getText().toString());
 
-                if(Integer.parseInt(age.getText().toString()) < 12)
+                if(Integer.parseInt(age.getText().toString()) < 18)
                 {
                     Toast.makeText(getApplicationContext(),"Enter 18+ Age", Toast.LENGTH_SHORT).show();
                 }
@@ -46,9 +46,9 @@ public class MainActivity extends AppCompatActivity {
                 {
                     Float meter = height_value/100;
 
-                    Float result = weight_value/(meter*meter);
+                    Float r = weight_value/(meter*meter);
 
-                //    SetCategory();
+                    SetCategory(r);
 
                   Toast.makeText(getApplicationContext(), result.toString(), Toast.LENGTH_SHORT).show();
                 }
@@ -70,7 +70,44 @@ public class MainActivity extends AppCompatActivity {
 //                startActivity(sendIntent);
             }
 
-            public void SetCategory(){
+            public void SetValidation() {
+
+                if (age.getText().toString().isEmpty()) {
+                    error = "Enter Age";
+                    if (height.getText().toString().isEmpty()) {
+                        if (weight.getText().toString().isEmpty()) {
+                            error = "Enter Values";
+                        }
+                        else
+                        {
+                            error = "Enter Age and Height";
+                        }
+                    }
+                    else if(weight.getText().toString().isEmpty())
+                    {
+                        error = "Enter Age and Weight";
+                    }
+                    else
+                    {
+                        error = "Age";
+                    }
+                }
+                else if(height.getText().toString().isEmpty())
+                {
+                    error = "Enter Height";
+                }
+                else
+                {
+                    error = "Enter Weight";
+                }
+
+               // Toast.makeText(getApplicationContext(), error, Toast.LENGTH_SHORT).show();
+            }
+
+
+            public void SetCategory(Float r){
+
+                 result = r;
 
                 if(result < 16)
                 {
@@ -105,42 +142,10 @@ public class MainActivity extends AppCompatActivity {
                     category = "Obese Class III";
                 }
 
-                Toast.makeText(getApplicationContext(), category.toString(), Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getApplicationContext(), category.toString(), Toast.LENGTH_SHORT).show();
             }
 
-            public void SetValidation() {
 
-                if (age.getText().toString().isEmpty()) {
-                    error = "Enter Age";
-                    if (height.getText().toString().isEmpty()) {
-                         if (weight.getText().toString().isEmpty()) {
-                            error = "Enter Values";
-                        }
-                         else
-                         {
-                             error = "Enter Age and Height";
-                         }
-                    }
-                    else if(weight.getText().toString().isEmpty())
-                    {
-                        error = "Enter Age and Weight";
-                    }
-                    else
-                    {
-                        error = "Age";
-                    }
-                  }
-                else if(height.getText().toString().isEmpty())
-                {
-                    error = "Enter Height";
-                }
-                else
-                {
-                    error = "Enter Weight";
-                }
-
-                Toast.makeText(getApplicationContext(), error, Toast.LENGTH_SHORT).show();
-            }
 
 
 
