@@ -24,7 +24,8 @@ tools:context=".SecondActivity">
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:textSize="30dp"
+            android:textSize="50dp"
+            android:textStyle="bold"
             android:text="Normal">
 
         </TextView>
@@ -35,7 +36,8 @@ tools:context=".SecondActivity">
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:textSize="30dp"
+            android:textSize="50dp"
+            android:textStyle="bold"
             android:hint="BMI">
 
         </TextView>

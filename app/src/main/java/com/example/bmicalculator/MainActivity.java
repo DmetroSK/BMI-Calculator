@@ -14,8 +14,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    String error,category;
-    Float result;
+    String error,category,color;
+    Double result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,26 +32,43 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                SetValidation();
 
-                Float height_value = Float.parseFloat(height.getText().toString());
-                Float weight_value = Float.parseFloat(weight.getText().toString());
-
-                if(Integer.parseInt(age.getText().toString()) < 18)
-                {
-                    Toast.makeText(getApplicationContext(),"Enter 18+ Age", Toast.LENGTH_SHORT).show();
+                if (age.getText().toString().equals("") || height.getText().toString().equals("") || weight.getText().toString().equals("")) {
+                    Toast.makeText(getApplicationContext(), "Enter Values", Toast.LENGTH_SHORT).show();
                 }
 
                 else
                 {
-                    Float meter = height_value/100;
+                    Double height_value = Double.parseDouble(height.getText().toString());
+                    Double weight_value = Double.parseDouble(weight.getText().toString());
 
-                    Float r = weight_value/(meter*meter);
+                    if(Integer.parseInt(age.getText().toString()) < 18)
+                    {
+                        Toast.makeText(getApplicationContext(),"Enter 18+ Age", Toast.LENGTH_SHORT).show();
+                    }
 
-                    SetCategory(r);
+                    else
+                    {
+                        Double meter = height_value/100; // convert cm to m
 
-                  Toast.makeText(getApplicationContext(), result.toString(), Toast.LENGTH_SHORT).show();
+                        Double r = weight_value/(meter*meter);
+
+                        SetCategory(r);
+
+                        Intent sendValues = new Intent(MainActivity.this, SecondActivity.class);
+                        sendValues.putExtra("Category", category);
+                        sendValues.putExtra("Result", r);
+                        sendValues.putExtra("Color", color);
+
+                        startActivity(sendValues);
+
+                     //   Toast.makeText(getApplicationContext(), result.toString(), Toast.LENGTH_SHORT).show();
+
+                    }
                 }
+
+
+
 
 
 
@@ -70,76 +87,51 @@ public class MainActivity extends AppCompatActivity {
 //                startActivity(sendIntent);
             }
 
-            public void SetValidation() {
-
-                if (age.getText().toString().isEmpty()) {
-                    error = "Enter Age";
-                    if (height.getText().toString().isEmpty()) {
-                        if (weight.getText().toString().isEmpty()) {
-                            error = "Enter Values";
-                        }
-                        else
-                        {
-                            error = "Enter Age and Height";
-                        }
-                    }
-                    else if(weight.getText().toString().isEmpty())
-                    {
-                        error = "Enter Age and Weight";
-                    }
-                    else
-                    {
-                        error = "Age";
-                    }
-                }
-                else if(height.getText().toString().isEmpty())
-                {
-                    error = "Enter Height";
-                }
-                else
-                {
-                    error = "Enter Weight";
-                }
-
-               // Toast.makeText(getApplicationContext(), error, Toast.LENGTH_SHORT).show();
-            }
 
 
-            public void SetCategory(Float r){
+            public void SetCategory(Double r){
 
                  result = r;
 
                 if(result < 16)
                 {
                     category = "Severe Thinness";
+                    color ="#c00000";
                 }
-                else if(16 <= result || result < 17)
+                else if(16 <= result && result < 17)
                 {
                     category = "Moderate Thinness";
+                    color ="#eb5834";
                 }
-                else if(17 <= result || result < 18.5)
+                else if(17 <= result && result < 18.5)
                 {
                     category = "Mild Thinness";
+                    color ="#ffc000";
                 }
-                else if(18.5 <= result || result < 25)
+                else if(18.5 <= result && result < 25)
                 {
                     category = "Normal";
+                    color ="#00b050";
                 }
-                else if(25 <= result || result < 30)
+                else if(25 <= result && result < 30)
                 {
                     category = "Overweight";
+                    color ="#ffd555";
                 }
-                else if(30 <= result || result < 35)
+                else if(30 <= result && result < 35)
                 {
                     category = "Obese Class I";
+                    color ="#ff0000";
                 }
-                else if(35 <= result || result < 40)
+                else if(35 <= result && result < 40)
                 {
                     category = "Obese Class II";
+                    color ="#ff0000";
                 }
                 else
                 {
                     category = "Obese Class III";
+                    color ="#c00000";
                 }
 
                // Toast.makeText(getApplicationContext(), category.toString(), Toast.LENGTH_SHORT).show();
