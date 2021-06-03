@@ -86,7 +86,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="7"
-                android:textSize="30dp"
+                android:textSize="20dp"
                 android:hint="cm"></TextView>
 
         </LinearLayout>
@@ -115,7 +115,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="7"
-                android:textSize="30dp"
+                android:textSize="20dp"
                 android:hint="kg"></TextView>
 
         </LinearLayout>

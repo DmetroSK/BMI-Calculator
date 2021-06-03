@@ -24,7 +24,7 @@ tools:context=".SecondActivity">
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:textSize="40dp"
+            android:textSize="30dp"
             android:textStyle="bold"
             android:text="Obese Class III">
 
@@ -36,7 +36,7 @@ tools:context=".SecondActivity">
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:textSize="40dp"
+            android:textSize="25dp"
             android:textStyle="bold"
             android:hint="BMI = 30.2 kg/m2">
 
