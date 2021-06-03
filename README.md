@@ -63,7 +63,7 @@ Download this apk file to your android device.
   App Name -  BMI.apk 
    ```
    
-[Download](https://github.com/DmetroSK/BMI-Calculator/BMI.apk)
+[Download](https://github.com/DmetroSK/BMI-Calculator/raw/main/BMI.apk)
 <br>
 <br>
 
