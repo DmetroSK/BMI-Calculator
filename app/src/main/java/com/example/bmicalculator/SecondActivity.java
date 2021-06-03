@@ -30,7 +30,7 @@ public class SecondActivity extends AppCompatActivity {
         String result_value = getValues.getStringExtra("Result");
         String color_value = getValues.getStringExtra("Color");
 
-        result.setText("BMI = " + result_value + "kg/m2");
+        result.setText("BMI = " + result_value + " kg/m2");
         category.setText(category_value);
         category.setTextColor(Color.parseColor(color_value));
     }

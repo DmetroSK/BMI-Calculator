@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
+
 public class MainActivity extends AppCompatActivity {
 
     String error,category,color;
@@ -22,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         Button btn_calculate_button = (Button) findViewById(R.id.btn_calculate);
         EditText age = (EditText) findViewById(R.id.txt_age);
         EditText height = (EditText) findViewById(R.id.txt_height);
@@ -31,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         btn_calculate_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
 
                 if (age.getText().toString().equals("") || height.getText().toString().equals("") || weight.getText().toString().equals("")) {
                     Toast.makeText(getApplicationContext(), "Enter Values", Toast.LENGTH_SHORT).show();
@@ -49,44 +49,30 @@ public class MainActivity extends AppCompatActivity {
 
                     else
                     {
-                        Double meter = height_value/100; // convert cm to m
+                        double meter = height_value/100; // convert cm to m
 
-                        Double r = weight_value/(meter*meter);
+                        double r = weight_value/(meter*meter);
+                        double round = Math.round(r);
 
-                        SetCategory(r);
+                        SetCategory(round);
+
+
+
+
+                        String re = String.valueOf(round);
 
                         Intent sendValues = new Intent(MainActivity.this, SecondActivity.class);
                         sendValues.putExtra("Category", category);
-                        sendValues.putExtra("Result", r);
+                        sendValues.putExtra("Result", re);
                         sendValues.putExtra("Color", color);
 
                         startActivity(sendValues);
-
-                     //   Toast.makeText(getApplicationContext(), result.toString(), Toast.LENGTH_SHORT).show();
 
                     }
                 }
 
 
-
-
-
-
-
-
-
-//
-//                Intent activity2Intent = new Intent(getApplicationContext(), SecondActivity.class);
-//                startActivity(activity2Intent);
-//
-//                Intent sendIntent = new Intent();
-//                sendIntent.setAction(Intent.ACTION_SEND);
-//                sendIntent.putExtra(Intent.EXTRA_SUBJECT,"Message Test");
-//                sendIntent.setType("text/plain");
-//
-//                startActivity(sendIntent);
             }
-
 
 
             public void SetCategory(Double r){
@@ -134,18 +120,11 @@ public class MainActivity extends AppCompatActivity {
                     color ="#c00000";
                 }
 
-               // Toast.makeText(getApplicationContext(), category.toString(), Toast.LENGTH_SHORT).show();
             }
-
-
-
-
-
 
         });
 
     }
-
 
     public void onBackPressed() {
 

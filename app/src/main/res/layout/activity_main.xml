@@ -48,6 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="Age"
+                android:textSize="30dp"
                 android:inputType="number">
 
             </EditText>
@@ -76,6 +77,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="Height"
+                android:textSize="30dp"
                 android:inputType="numberDecimal">
 
             </EditText>
@@ -84,6 +86,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="7"
+                android:textSize="30dp"
                 android:hint="cm"></TextView>
 
         </LinearLayout>
@@ -103,6 +106,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:hint="Weight"
+                android:textSize="30dp"
                 android:inputType="numberDecimal">
 
             </EditText>
@@ -111,6 +115,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="7"
+                android:textSize="30dp"
                 android:hint="kg"></TextView>
 
         </LinearLayout>
@@ -128,6 +133,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="Calculate"
+                android:textSize="25dp"
                 android:background="@color/purple_200"
                 android:id="@+id/btn_calculate"
                 >
