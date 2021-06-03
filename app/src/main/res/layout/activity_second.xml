@@ -24,9 +24,9 @@ tools:context=".SecondActivity">
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:textStyle="bold"
-            android:text="Normal">
+            android:text="Obese Class III">
 
         </TextView>
 
@@ -36,9 +36,9 @@ tools:context=".SecondActivity">
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:textSize="50dp"
+            android:textSize="40dp"
             android:textStyle="bold"
-            android:hint="BMI">
+            android:hint="BMI = 30.2 kg/m2">
 
         </TextView>
 
